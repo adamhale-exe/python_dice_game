@@ -4,6 +4,7 @@ import random
 def roll():
     return random.randint(1,6)
 
+#choose number of players (2-4)
 def player_count():
     while True:
         number_of_players = input("Choose the number of players (2 - 4):")
@@ -17,9 +18,11 @@ def player_count():
     return number_of_players
 
 players = player_count()
-print(players)
-#choose number of players (2-4)
-#create array of player scores based on number of players
+
+#create list of player scores based on number of players
+total_score = [0 for _ in range(players)]
+print(total_score)
+
 #if dice rolls 1, 0 score and next person
 #else increment score by value
 #update total score if player chooses not to continue
