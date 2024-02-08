@@ -1,5 +1,6 @@
 #dice game
 import random
+import time
 #roll a random number from 1-6 function
 def roll():
     return random.randint(1,6)
@@ -58,3 +59,6 @@ while max(total_score) <= 30:
 #highest score wins
 winner_index = total_score.index(max(total_score))
 print("\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.\n\nPlayer", winner_index + 1, "wins with a score of", max(total_score),"\n\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.")
+
+#sleep for 5seconds before application closes
+time.sleep(10)
