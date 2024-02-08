@@ -22,26 +22,30 @@ players = player_count()
 #create list of player scores based on number of players
 total_score = [0 for _ in range(players)]
 
-for i in range(len(total_score)):
-    round_score = 0
-    print("Ready Player", i + 1,"\nYour total score is", total_score[i])
-    while True:
-        play_choice = input("Would you like to roll? (y/n) ")
-        if play_choice != "y":
-            print("Your turn is over. You scored", round_score,"points")
-            break
-        current_roll = roll()
-        print("You rolled a ",current_roll)
-        #if dice rolls 1, 0 score and next person
-        if current_roll == 1:
-            round_score = 0
-            print("Your turn is over. You scored", round_score,"points")
-            break
-        #else increment score by value
-        round_score += current_roll
-        print("Your score this round is", round_score)
-    #update total score once round loop finished
-    total_score[i] += round_score
-
 #check after all players have had turn if anyone is over 50 score
+while max(total_score) <= 30:
+    for i in range(len(total_score)):
+        round_score = 0
+        print("------------------------\n---- Ready Player", i + 1,"----\n------------------------\n-> Your total score is", total_score[i])
+        while True:
+            play_choice = input("Would you like to roll? (y/n) ")
+            if play_choice != "y":
+                print("Your turn is over. You scored", round_score,"points")
+                break
+            current_roll = roll()
+            print("\nYou rolled a",current_roll,"\n")
+            #if dice rolls 1, 0 score and next person
+            if current_roll == 1:
+                round_score = 0
+                print("Your turn is over. You scored", round_score,"points")
+                break
+            #else increment score by value
+            round_score += current_roll
+            print("Your score this round is", round_score)
+        #update total score once round loop finished
+        total_score[i] += round_score
+        print("Your new total score is", total_score[i])
+
 #highest score wins
+winner_index = total_score.index(max(total_score))
+print("\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.\n\nPlayer", winner_index + 1, "wins with a score of", max(total_score),"\n\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.")
