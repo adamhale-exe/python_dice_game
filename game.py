@@ -17,6 +17,15 @@ def player_count():
             print("Error: Number of players must be a digit")
     return number_of_players
 
+print(r"""
+  ____                    _ _ 
+ /\' .\    _____       __| (_) ___ ___     __ _  __ _ _ __ ___   ___ 
+/: \___\  / .  /\     / _` | |/ __/ _ \   / _` |/ _` | '_ ` _ \ / _ \
+\' / . / /____/..\   | (_| | | (_|  __/  | (_| | (_| | | | | | |  __/
+ \/___/  \'  '\  /    \__,_|_|\___\___|   \__, |\__,_|_| |_| |_|\___|
+          \'__'\/                         |___/
+      """)
+
 players = player_count()
 
 #create list of player scores based on number of players
