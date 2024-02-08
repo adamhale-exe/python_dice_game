@@ -7,7 +7,7 @@ def roll():
 #choose number of players (2-4)
 def player_count():
     while True:
-        number_of_players = input("Choose the number of players (2 - 4):")
+        number_of_players = input("Choose the number of players (2 - 4): ")
         if number_of_players.isdigit():
             number_of_players = int(number_of_players)
             if 2 <= number_of_players <= 4:
@@ -21,10 +21,25 @@ players = player_count()
 
 #create list of player scores based on number of players
 total_score = [0 for _ in range(players)]
-print(total_score)
 
-#if dice rolls 1, 0 score and next person
-#else increment score by value
-#update total score if player chooses not to continue
+
+round_score = 0
+while True:
+    play_choice = input("Would you like to roll? (y/n) ")
+    if play_choice != "y":
+        print("Your turn is over. You scored", round_score,"points")
+        break
+    current_roll = roll()
+    print("You rolled a ",current_roll)
+    #if dice rolls 1, 0 score and next person
+    if current_roll == 1:
+        round_score = 0
+        print("Your turn is over. You scored", round_score,"points")
+        break
+    #else increment score by value
+    round_score += current_roll
+    print("Your score this round is", round_score)
+#update total score once round loop finished
+
 #check after all players have had turn if anyone is over 50 score
 #highest score wins
