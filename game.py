@@ -26,14 +26,14 @@ print(r"""
  \/___/  \'  '\  /    \__,_|_|\___\___|   \__, |\__,_|_| |_| |_|\___|
           \'__'\/                         |___/
       """)
-
+print("\nInstructions:\nThis is a simple addition game of risk and reward.\nKeep rolling a single die to improve your score.\nBut get too greedy, roll a 1, and lose all your points for that turn.\nFirst to 30 wins!\n")
 players = player_count()
 
 #create list of player scores based on number of players
 total_score = [0 for _ in range(players)]
 
 #check after all players have had turn if anyone is over 50 score
-while max(total_score) <= 30:
+while max(total_score) < 30:
     for i in range(len(total_score)):
         round_score = 0
         print("------------------------\n---- Ready Player", i + 1,"----\n------------------------\n-> Your total score is", total_score[i])
@@ -61,4 +61,5 @@ winner_index = total_score.index(max(total_score))
 print("\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.\n\nPlayer", winner_index + 1, "wins with a score of", max(total_score),"\n\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.")
 
 #sleep for 5seconds before application closes
+print("\nThe game will close in 10 seconds")
 time.sleep(10)
