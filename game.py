@@ -60,6 +60,6 @@ while max(total_score) < 30:
 winner_index = total_score.index(max(total_score))
 print("\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.\n\nPlayer", winner_index + 1, "wins with a score of", max(total_score),"\n\n.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.")
 
-#sleep for 5seconds before application closes
+#sleep for 10 seconds before application closes
 print("\nThe game will close in 10 seconds")
 time.sleep(10)
